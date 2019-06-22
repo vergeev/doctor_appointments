@@ -10,4 +10,5 @@ class SpecialtyAdmin(admin.ModelAdmin):
 
 @admin.register(Clinic)
 class ClinicAdmin(admin.ModelAdmin):
+    search_fields = ['name', 'address', 'contact_number']
     raw_id_fields = ['specialties']
