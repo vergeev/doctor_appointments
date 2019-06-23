@@ -1,10 +1,15 @@
 from django.contrib import admin
 
-from clinics.models import Clinic, Specialty
+from clinics.models import Clinic, Specialty, Patient
 
 
 @admin.register(Specialty)
 class SpecialtyAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Patient)
+class PatientAdmin(admin.ModelAdmin):
     pass
 
 
