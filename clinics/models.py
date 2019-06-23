@@ -21,7 +21,7 @@ class Clinic(models.Model):
     specialties = models.ManyToManyField(
         Specialty,
         verbose_name='Доступные специальности',
-        related_name='clinics'
+        related_name='clinics',
     )
 
     def __str__(self):
