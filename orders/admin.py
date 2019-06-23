@@ -28,7 +28,7 @@ class OrderAdmin(admin.ModelAdmin):
         'clinic',
         'status',
         'appointment_time',
-        'created_at'
+        'created_at',
     ]
 
     fieldsets = (
@@ -47,7 +47,7 @@ class OrderAdmin(admin.ModelAdmin):
                 'patient',
                 'status',
                 'appointment_time',
-            )
+            ),
         }),
     )
 
