@@ -19,6 +19,17 @@ class OrderAdmin(admin.ModelAdmin):
     inlines = [PatientTimeRangeInline, ClinicTimeRangeInline]
     save_on_top = True
     readonly_fields = ['created_by', 'created_at', 'updated_at']
+    list_filter = ['patient', 'clinic', 'created_by', 'status']
+    date_hierarchy = 'created_at'
+    search_fields = ['patient__name', 'specialty__title', 'clinic__name']
+    list_display = [
+        'patient',
+        'specialty',
+        'clinic',
+        'status',
+        'appointment_time',
+        'created_at'
+    ]
 
     fieldsets = (
         ('Дежурная информация', {
