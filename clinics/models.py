@@ -25,7 +25,7 @@ class Clinic(models.Model):
     )
 
     def __str__(self):
-        return f'{self.name} ({self.contact_number})'
+        return f'{self.name} {self.contact_number}'
 
     class Meta:
         verbose_name = 'Клиника'
@@ -42,7 +42,7 @@ class Patient(models.Model):
     contact_number = ContactPhoneField()
 
     def __str__(self):
-        return f'{self.name} ({self.contact_number})'
+        return f'{self.name} {self.contact_number}'
 
     class Meta:
         verbose_name = 'Пациент'
