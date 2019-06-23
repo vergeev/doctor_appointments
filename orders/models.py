@@ -37,6 +37,8 @@ class Order(models.Model):
         default=OrderStatus.CREATED,
         max_length=255,
     )
+    appointment_time = models.DateTimeField(
+        'Время приёма', blank=True, null=True)
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         verbose_name='Ответственный оператор',
