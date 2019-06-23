@@ -20,6 +20,26 @@ class OrderAdmin(admin.ModelAdmin):
     save_on_top = True
     readonly_fields = ['created_by', 'created_at', 'updated_at']
 
+    fieldsets = (
+        ('Дежурная информация', {
+            'classes': ('collapse', 'wide'),
+            'fields': (
+                'created_by',
+                'created_at',
+                'updated_at',
+            ),
+        }),
+        (None, {
+            'fields': (
+                'clinic',
+                'specialty',
+                'patient',
+                'status',
+                'appointment_time',
+            )
+        }),
+    )
+
     def save_model(self, request, obj, form, change):
         if not hasattr(obj, 'created_by'):
             obj.created_by = request.user
